@@ -8,6 +8,7 @@
 name: Java CI with Gradle
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "master" ]
   pull_request:
@@ -46,7 +47,12 @@ jobs:
     #
     # - name: Build with Gradle 8.9
     #   run: gradle build
+    - name: Release Drafter
+  # You may pin to the exact commit or the version.
+  # uses: release-drafter/release-drafter@3f0f87098bd6b5c5b9a36d49c41d998ea58f9348
+      uses: release-drafter/release-drafter@v6.0.0
 
+    
   dependency-submission:
 
     runs-on: ubuntu-latest
